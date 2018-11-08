@@ -75,7 +75,7 @@ public class Chapter4 {
         Answer4[0][0]=2; Answer4[0][1]=-3; Answer4[0][2]=-3; Answer4[0][3]=5;
         Answer4[1][0]=-2; Answer4[1][1]=6; Answer4[1][2]=16; Answer4[1][3]=14;
         Answer4[2][0]=-2; Answer4[2][1]=7; Answer4[2][2]=14; Answer4[2][3]=8;
-        Answer4[3][0]=0; Answer4[3][1]=10; Answer4[3][2]=29; Answer4[3][3]=27;
+        Answer4[3][0]=6; Answer4[3][1]=10; Answer4[3][2]=29; Answer4[3][3]=27;
 
         //printMatrix(createSubmatrix(Answer4,2,3,2,3));
 
@@ -83,6 +83,11 @@ public class Chapter4 {
         printMatrix(output);
         int[][] output4=naiveRecursiveMatrixMultiplication(4,G,H);
         printMatrix(output4);
+
+        int[][] outputStrassen=strassenAlgorithm(D,E);
+        printMatrix(outputStrassen);
+        int[][] output4Strassen=strassenAlgorithm(G,H);
+        printMatrix(output4Strassen);
 
     }
 
@@ -177,6 +182,60 @@ public class Chapter4 {
         }
     }
 
+
+    private static int[][] strassenAlgorithm(int[][] A,int[][] B){
+        int size=A.length;
+        if (size == 1) {
+            int[][] number = new int[1][1];
+            number[0][0] = A[0][0] * B[0][0];
+            return number;
+        } else {
+            int[][] A11 = createSubmatrix(A, 0, size / 2 - 1, 0, size / 2 - 1);
+            int[][] A12 = createSubmatrix(A, 0, size / 2 - 1, size / 2, size - 1);
+            int[][] A21 = createSubmatrix(A, size / 2, size - 1, 0, size / 2 - 1);
+            int[][] A22 = createSubmatrix(A, size / 2, size - 1, size / 2, size - 1);
+
+            int[][] B11 = createSubmatrix(B, 0, size / 2 - 1, 0, size / 2 - 1);
+            int[][] B12 = createSubmatrix(B, 0, size / 2 - 1, size / 2, size - 1);
+            int[][] B21 = createSubmatrix(B, size / 2, size - 1, 0, size / 2 - 1);
+            int[][] B22 = createSubmatrix(B, size / 2, size - 1, size / 2, size - 1);
+
+            int[][] S1 = sumMatrices(B12, negateMatrix(B22));
+            int[][] S2 = sumMatrices(A11, A12);
+            int[][] S3 = sumMatrices(A21, A22);
+            int[][] S4 = sumMatrices(B21, negateMatrix(B11));
+            int[][] S5 = sumMatrices(A11, A22);
+            int[][] S6 = sumMatrices(B11, B22);
+            int[][] S7 = sumMatrices(A12, negateMatrix(A22));
+            int[][] S8 = sumMatrices(B21, B22);
+            int[][] S9 = sumMatrices(A11, negateMatrix(A21));
+            int[][] S10 = sumMatrices(B11, B12);
+
+            int[][] P1 = strassenAlgorithm(A11, S1);
+            int[][] P2 = strassenAlgorithm(S2, B22);
+            int[][] P3 = strassenAlgorithm(S3, B11);
+            int[][] P4 = strassenAlgorithm(A22, S4);
+            int[][] P5 = strassenAlgorithm(S5, S6);
+            int[][] P6 = strassenAlgorithm(S7, S8);
+            int[][] P7 = strassenAlgorithm(S9, S10);
+
+            int[][] C11 = sumMatrices(P5, P4);
+            C11 = sumMatrices(C11, negateMatrix(P2));
+            C11 = sumMatrices(C11, P6);
+
+            int[][] C12 = sumMatrices(P1, P2);
+            int[][] C21 = sumMatrices(P3, P4);
+            int[][] C22 = sumMatrices(P5, P1);
+            C22 = sumMatrices(C22, negateMatrix(P3));
+            C22 = sumMatrices(C22, negateMatrix(P7));
+
+            int[][] C = concatenateMatrices(C11, C12, C21, C22);
+
+            return C;
+        }
+
+    }
+
     private static void printMatrix(int[][] A) {
         System.out.print("[ ");
         for (int i = 0; i < A.length; i++) {
@@ -240,6 +299,16 @@ public class Chapter4 {
             }
         }
         return submatrix;
+    }
+
+    private static int[][] negateMatrix(int[][] A){
+        int[][] negate=new int[A.length][A[0].length];
+        for(int i=0;i<A.length;i++){
+            for(int j=0;j<A[0].length;j++){
+                negate[i][j]=-1*A[i][j];
+            }
+        }
+        return negate;
     }
 
 }
