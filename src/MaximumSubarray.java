@@ -66,7 +66,6 @@ public class MaximumSubarray {
         return output;
     }
 
-
     private static int[] findMaximumSubarray(int[] A,int low,int high){
         int[] output = new int[3];
         if(low==high){
@@ -90,6 +89,25 @@ public class MaximumSubarray {
                 return cross;
             }
         }
+    }
+
+    private static int[] findMaximumSubarrayLinear(int[] A){
+        int[] output=new int[3];
+        int sum=A[0];
+        int maxsum=A[0];
+        int left=0;
+        int right=0;
+        for(int i=0;i<A.length;i++){
+            sum=sum+A[i];
+            if(sum>maxsum){
+                maxsum=sum;
+                right=i;
+            }
+        }
+        output[0]=left;
+        output[1]=right;
+        output[2]=sum;
+        return output;
     }
 
 }
