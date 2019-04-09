@@ -13,6 +13,11 @@ public class MaximumSubarray {
         for(int i=0;i<3;i++) {
             System.out.println(output[i]);
         }
+
+        output=findMaximumSubarrayLinear(A);
+        for(int i=0;i<3;i++) {
+            System.out.println(output[i]);
+        }
     }
 
     private static int[] bruteForceMethod(int[] A){
@@ -92,17 +97,32 @@ public class MaximumSubarray {
     }
 
     private static int[] findMaximumSubarrayLinear(int[] A){
+        int[] B={13,-3,-25,20,-3,-16,-23,18,20,-7,12,-5,-22,15,-4,7};
         int[] output=new int[3];
         int sum=A[0];
-        int maxsum=A[0];
+        int positivesum=0;
+        int negativesum=0;
         int left=0;
         int right=0;
         for(int i=0;i<A.length;i++){
-            sum=sum+A[i];
-            if(sum>maxsum){
-                maxsum=sum;
-                right=i;
+            if(A[i]>=0){
+                positivesum=positivesum+A[i];
+                if(positivesum+negativesum>0){
+                    if(positivesum+negativesum>sum){
+                        right=i;
+                        sum=positivesum+negativesum;
+                    }
+                }else{
+                    left=i;
+                    right=i;
+                    positivesum=A[i];
+                    negativesum=0;
+                    sum=A[i];
+                }
+            }else{
+                negativesum=negativesum+A[i];
             }
+
         }
         output[0]=left;
         output[1]=right;
