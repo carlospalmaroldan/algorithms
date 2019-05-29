@@ -7,6 +7,12 @@ public class Chapter5 {
         for(int j=0;j<A.length;j++) {
             System.out.println(A[j]);
         }
+        int[] B={0,4,1,3,2,16,9,10,14,8,7};
+        buildMaxHeap(B);
+        System.out.println("buildMaxHeap");
+        for(int j=0;j<A.length;j++) {
+            System.out.println(B[j]);
+        }
     }
 
     public static void maxHeapify(int[] A,int i){
@@ -49,4 +55,17 @@ public class Chapter5 {
         return 2*i+1;
     }
 
+
+    public static void buildMaxHeap(int[] A){
+
+        int limit=0;
+        if(A.length%2==0) {
+           limit= A.length / 2;
+        }else{
+            limit=A.length/2+1;
+        }
+        for(int j=limit;j>0;j--){
+            maxHeapify(A,j);
+        }
+    }
 }
