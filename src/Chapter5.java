@@ -13,6 +13,13 @@ public class Chapter5 {
         for(int j=0;j<A.length;j++) {
             System.out.println(B[j]);
         }
+
+        int[] C={0,16,14,10,8,7,9,3,2,4,1};
+        heapSort(C);
+        System.out.println("heapSort");
+        for(int j=0;j<A.length;j++) {
+            System.out.println(C[j]);
+        }
     }
 
     public static void maxHeapify(int[] A,int i){
@@ -37,6 +44,27 @@ public class Chapter5 {
         }
 
 
+    }
+
+    public static void maxHeapifyVariableHeapSize(int[] A,int heapsize,int i){
+        int l=left(i);
+        int r=right(i);
+        int largest=0;
+
+        if (l < heapsize && A[l]>A[i]) {
+            largest=l;
+        }else{
+            largest=i;
+        }
+        if(r<heapsize && A[r]>A[largest]){
+            largest=r;
+        }
+        if(largest!=i){
+            int temp=A[i];
+            A[i]=A[largest];
+            A[largest]=temp;
+            maxHeapifyVariableHeapSize(A,heapsize,largest);
+        }
     }
 
     public int parent(int i){
@@ -66,6 +94,19 @@ public class Chapter5 {
         }
         for(int j=limit;j>0;j--){
             maxHeapify(A,j);
+        }
+    }
+
+    public static void heapSort(int[] A){
+        buildMaxHeap(A);
+        int temp=0;
+        int heapsize=A.length;
+        for(int i=A.length-1;i>1;i--){
+            temp=A[i];
+            A[i]=A[1];
+            A[1]=temp;
+            heapsize= heapsize-1;
+            maxHeapifyVariableHeapSize(A,heapsize,1);
         }
     }
 }
