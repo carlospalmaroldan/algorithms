@@ -1,25 +1,35 @@
+import java.util.List;
+
 public class Chapter5 {
 
 
     public static  void main(String[] args){
         int[] A={0,16,4,10,14,7,9,3,2,8,1};
         maxHeapify(A,2);
-        for(int j=0;j<A.length;j++) {
-            System.out.println(A[j]);
-        }
+        printArray(A);
         int[] B={0,4,1,3,2,16,9,10,14,8,7};
         buildMaxHeap(B);
         System.out.println("buildMaxHeap");
-        for(int j=0;j<A.length;j++) {
-            System.out.println(B[j]);
-        }
+        printArray(B);
 
         int[] C={0,16,14,10,8,7,9,3,2,4,1};
         heapSort(C);
         System.out.println("heapSort");
-        for(int j=0;j<A.length;j++) {
-            System.out.println(C[j]);
+        printArray(C);
+
+
+        System.out.println("heapExtractMax");
+        int[] D={0,15,13,9,5,12,8,7,4,0,6,2,1};
+        System.out.println("max value = "+heapExtractMax(D));
+        for(int j=0;j<D.length-1;j++) {
+            System.out.println(D[j]);
         }
+
+        System.out.println("maxHeapInsert");
+        int[] E={0,15,13,9,5,12,8,7,4,0,6,2,1};
+
+        printArray(maxHeapInsert(E,10));
+
     }
 
     public static void maxHeapify(int[] A,int i){
@@ -67,7 +77,7 @@ public class Chapter5 {
         }
     }
 
-    public int parent(int i){
+    public static int parent(int i){
         if(i%2==0) {
             return i / 2;
         }else{
@@ -107,6 +117,46 @@ public class Chapter5 {
             A[1]=temp;
             heapsize= heapsize-1;
             maxHeapifyVariableHeapSize(A,heapsize,1);
+        }
+    }
+
+    public static int heapExtractMax(int[] A){
+        if(A.length<1) {
+            throw new RuntimeException("heap underflow");
+        }
+        int max=A[1];
+        A[1]=A[A.length-1];
+        maxHeapifyVariableHeapSize(A,A.length-1,1);
+
+        return max;
+    }
+
+    public static void heapIncreaseKey(int[] A,int i,int key){
+        if(key<A[i]){
+            throw new RuntimeException("new key is smaller than current key");
+        }
+        A[i]=key;
+        while (i>1 && A[parent(i)]<A[i]){
+            int temp=A[i];
+            A[i]=A[parent(i)];
+            A[parent(i)]=temp;
+            i=parent(i);
+        }
+    }
+
+    public static int[] maxHeapInsert(int[] A,int key){
+        int[] B=new int[A.length+1];
+        for(int j=0;j<A.length;j++){
+            B[j]=A[j];
+        }
+        B[B.length-1]=-10000;
+        heapIncreaseKey(B,B.length-1,key);
+        return B;
+    }
+
+    public static void printArray(int[] A){
+        for(int j=0;j<A.length;j++) {
+            System.out.println(A[j]);
         }
     }
 }
