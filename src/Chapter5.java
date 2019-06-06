@@ -30,6 +30,17 @@ public class Chapter5 {
 
         printArray(maxHeapInsert(E,10));
 
+        /*int[] G={0,15,13,9,0,2,1,7,4,5,6,12,8};
+        minHeapify(G ,2);*/
+
+        System.out.println("buildMinHeap");
+        int[] F={0,15,13,9,5,12,8,7,4,0,6,2,1};
+        buildMinHeap(F);
+        printArray(F);
+        
+        System.out.println("minHeapSort");
+        minHeapSort(F);
+        printArray(F);
     }
 
     public static void maxHeapify(int[] A,int i){
@@ -157,6 +168,66 @@ public class Chapter5 {
     public static void printArray(int[] A){
         for(int j=0;j<A.length;j++) {
             System.out.println(A[j]);
+        }
+    }
+
+
+    public static void minHeapify(int[] A,int i){
+        int l=left(i);
+        int r=right(i);
+        int smallest=0;
+        if(l<A.length && A[l]<A[i]){
+            smallest=l;
+        }else{smallest=i;}
+        if(r<A.length && A[r]<A[smallest]){
+            smallest=r;
+        }
+        if(smallest!=i){
+            int temp=A[i];
+            A[i]=A[smallest];
+            A[smallest]=temp;
+            minHeapify(A,smallest);
+        }
+    }
+
+    public static void buildMinHeap(int[] A){
+        int limit=0;
+        if((A.length-1)%2==0){
+            limit=A.length/2;
+        }else{
+            limit=(A.length-2)/2;
+        }
+        for(int i=limit;i>0;i--){
+            minHeapify(A,i);
+        }
+    }
+
+    public static void minHeapifyVariable(int[] A,int i,int heapsize){
+        int l=left(i);
+        int r=right(i);
+        int smallest=0;
+        if(l<heapsize && A[l]<A[i]){
+            smallest=l;
+        }else{smallest=i;}
+        if(r<heapsize && A[r]<A[smallest]){
+            smallest=r;
+        }
+        if(smallest!=i){
+            int temp=A[i];
+            A[i]=A[smallest];
+            A[smallest]=temp;
+            minHeapifyVariable(A,smallest,heapsize);
+        }
+    }
+    public static void minHeapSort(int[] A){
+        buildMinHeap(A);
+        int heapsize=A.length;
+        for(int i=0;i<A.length-2;i++){
+            int temp = A[1];
+            A[1] = A[heapsize - 1];
+            A[heapsize - 1] = temp;
+            heapsize=heapsize-1;
+            minHeapifyVariable(A, 1,heapsize);
         }
     }
 }
