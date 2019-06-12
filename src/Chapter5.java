@@ -37,7 +37,7 @@ public class Chapter5 {
         int[] F={0,15,13,9,5,12,8,7,4,0,6,2,1};
         buildMinHeap(F);
         printArray(F);
-        
+
         System.out.println("minHeapSort");
         minHeapSort(F);
         printArray(F);
