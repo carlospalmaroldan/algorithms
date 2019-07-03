@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Chapter7 {
     public static  void main(String[] args){
         int[] A={13, 19, 9, 5, 12, 8, 7, 4, 21, 2, 6, 11};
@@ -11,6 +13,18 @@ public class Chapter7 {
         quicksortHoare(C,0,C.length-1);
         System.out.println("Hoare");
         printArray(C);
+        int[] D={1,3,2,5,1,3};
+        partitionRepeatedElements(D,0,D.length-1);
+        System.out.println("RepeatedElements");
+        printArray(D);
+        int[] E={1,3,2,5,1,3};
+        randomizedPartitionRepeatedElements(E,0,D.length-1);
+        System.out.println("RepeatedElementsRandom");
+        printArray(D);
+        int[] F={1,3,2,5,1,3,1,2,5};
+        System.out.println("RepeatedElementsRandomQuicksort");
+        randomizedQuicksortRepeated(F,0,F.length-1);
+        printArray(F);
     }
 
     public static int partition(int[] A,int p, int r){
@@ -102,4 +116,67 @@ public class Chapter7 {
             }
         }
     }
+
+    //TODO modify to tolerate the pivot being the minimum element in the array
+    public static int[] partitionRepeatedElements(int[] A, int p, int r){
+        int x=A[r];
+        int i=p-1;
+        int k=p-1;
+        int temp1;
+        int temp2;
+        int[] output=new int[2];
+        for(int j=p;j<A.length-1;j++){
+            temp2=A[j];
+            if (temp2<x){
+                if(k>=0){
+                    k=k+1;
+                    temp1=A[k];
+                    A[k]=A[j];
+                    A[j]=temp1;
+                    i=i+1;
+                    temp1=A[i];
+                    A[i]=A[k];
+                    A[k]=temp1;
+                }else {
+                    i = i + 1;
+                    k = k + 1;
+                    temp1 = A[i];
+                    A[i] = A[j];
+                    A[j] = temp1;
+                }
+            }
+            if(temp2==x){
+                k=k+1;
+                temp1=A[k];
+                A[k]=A[j];
+                A[j]=temp1;
+            }
+        }
+        k=k+1;
+        temp1=A[k];
+        A[k]=A[r];
+        A[r]=temp1;
+        output[0]=i;
+        output[1]=k;
+        return output;
+    }
+
+    public static int[] randomizedPartitionRepeatedElements(int[] A,int p,int r){
+        Random rand = new Random();
+        int n = rand.nextInt(r);
+        n += p;
+        int temp=A[n];
+        A[n]=A[r];
+        A[r]=temp;
+       return  partitionRepeatedElements(A,p,r);
+    }
+
+    public static void randomizedQuicksortRepeated(int[] A,int p,int r){
+        if(p<r){
+            int[] output=randomizedPartitionRepeatedElements(A,p,r);
+            randomizedQuicksortRepeated(A,p,output[0]);
+            randomizedQuicksortRepeated(A,output[1],r);
+        }
+    }
 }
+
