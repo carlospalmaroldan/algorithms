@@ -2,7 +2,7 @@ import java.util.Random;
 
 public class Chapter7 {
     public static  void main(String[] args){
-        int[] A={13, 19, 9, 5, 12, 8, 7, 4, 21, 2, 6, 11};
+       /* int[] A={13, 19, 9, 5, 12, 8, 7, 4, 21, 2, 6, 11};
         quicksort(A,0,A.length-1);
         printArray(A);
         int[] B={13, 19, 9, 5, 12, 8, 7, 4, 21, 2, 6, 11};
@@ -20,11 +20,15 @@ public class Chapter7 {
         int[] E={1,3,2,5,1,3};
         randomizedPartitionRepeatedElements(E,0,D.length-1);
         System.out.println("RepeatedElementsRandom");
-        printArray(D);
+        printArray(D);*/
         int[] F={1,3,2,5,1,3,1,2,5};
         System.out.println("RepeatedElementsRandomQuicksort");
         randomizedQuicksortRepeated(F,0,F.length-1);
         printArray(F);
+
+       /* int[] G={1,3,2,5,1,3,1,2,5};
+        partitionRepeatedElements(G,0,8);*/
+
     }
 
     public static int partition(int[] A,int p, int r){
@@ -125,7 +129,7 @@ public class Chapter7 {
         int temp1;
         int temp2;
         int[] output=new int[2];
-        for(int j=p;j<A.length-1;j++){
+        for(int j=p;j<r;j++){
             temp2=A[j];
             if (temp2<x){
                 if(k>=0){
@@ -157,13 +161,13 @@ public class Chapter7 {
         A[k]=A[r];
         A[r]=temp1;
         output[0]=i;
-        output[1]=k;
+        output[1]=k+1;
         return output;
     }
 
     public static int[] randomizedPartitionRepeatedElements(int[] A,int p,int r){
         Random rand = new Random();
-        int n = rand.nextInt(r);
+        int n = rand.nextInt(r-p+1);
         n += p;
         int temp=A[n];
         A[n]=A[r];
