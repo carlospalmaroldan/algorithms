@@ -1,6 +1,6 @@
 import java.util.List;
 
-public class Chapter5 {
+public class Chapter6 {
 
 
     public static  void main(String[] args){
@@ -41,6 +41,11 @@ public class Chapter5 {
         System.out.println("minHeapSort");
         minHeapSort(F);
         printArray(F);
+
+        System.out.println("heapSortIterative");
+        int[] G={0,16,4,10,14,7,9,3,2,8,1};
+        heapSortIterative(G,2);
+        printArray(G);
     }
 
     public static void maxHeapify(int[] A,int i){
@@ -228,6 +233,27 @@ public class Chapter5 {
             A[heapsize - 1] = temp;
             heapsize=heapsize-1;
             minHeapifyVariable(A, 1,heapsize);
+        }
+    }
+
+    public static void heapSortIterative(int[] A,int i){
+        int position=i;
+        int largest=i;
+        while(largest<A.length){
+            int l=left(largest);
+            int r=right(largest);
+            if (l < A.length && A[l] > A[largest]){
+                largest=l;
+            }
+            if(r< A.length && A[r] >A[largest]){
+                largest=r;
+            }
+            if(position!=largest){
+                int temp=A[largest];
+                A[largest]=A[position];
+                A[position]=temp;
+                position=largest;
+            }else{return;}
         }
     }
 }
