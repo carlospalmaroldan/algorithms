@@ -1,9 +1,14 @@
 import java.util.List;
+import java.lang.Math.*;
+
+import static java.lang.Math.floor;
 
 public class Chapter6 {
 
 
     public static  void main(String[] args){
+
+
         int[] A={0,16,4,10,14,7,9,3,2,8,1};
         maxHeapify(A,2);
         printArray(A);
