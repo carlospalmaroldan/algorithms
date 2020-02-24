@@ -1,4 +1,5 @@
-
+import java.util.ArrayList;
+import java.util.List;
 
 public class BinarySearchTree<K extends Comparable> {
     private Node<K> root = new Node<>();
@@ -62,6 +63,20 @@ public class BinarySearchTree<K extends Comparable> {
     }
 
 
+    public List<Node<K>> retrieveInOrder(){
+        return retrieveInOrder(root);
+    }
+
+    private List<Node<K>> retrieveInOrder(Node<K> node){
+        List<Node<K>> list = new ArrayList<>();
+        if(!node.isEmpty()) {
+            list.addAll(retrieveInOrder(node.left));
+            list.add(node);
+            list.addAll(retrieveInOrder(node.right));
+        }
+        return list;
+
+    }
 
 
     private static class Node<K>{
@@ -79,22 +94,30 @@ public class BinarySearchTree<K extends Comparable> {
         }
 
         public Node(){};
+
+        public String toString(){
+            return key.toString();
+        }
     }
 
     public static void main(String[] args){
-        BinarySearchTree<Integer> stringTree = new BinarySearchTree<>();
-        stringTree.insert(4);
-        stringTree.insert(2);
-        stringTree.insert(6);
-        stringTree.insert(1);
-        stringTree.insert(3);
-        stringTree.insert(5);
-        stringTree.insert(7);
-        stringTree.insert(8);
-        stringTree.insert(9);
+        BinarySearchTree<Integer> integerTree = new BinarySearchTree<>();
+        integerTree.insert(4);
+        integerTree.insert(2);
+        integerTree.insert(6);
+        integerTree.insert(1);
+        integerTree.insert(3);
+        integerTree.insert(5);
+        integerTree.insert(7);
+        integerTree.insert(8);
+        integerTree.insert(9);
 
 
-        System.out.println(stringTree);
+       /* System.out.println(stringTree);*/
+        List<Node<Integer>> list=integerTree.retrieveInOrder();
+        for(int i = 0; i< list.size(); i++){
+            System.out.println(list.get(i));
+        }
     }
 
 }
