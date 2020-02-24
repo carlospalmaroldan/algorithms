@@ -48,19 +48,20 @@ public class BinarySearchTree<K extends Comparable> {
             return "";
         }
         StringBuilder stringBuilder = new StringBuilder();
-        for(int i = 0; i<3*level;i++){
-            stringBuilder.append("-");
+        for(int i = 0; i< (3*level - 3); i++){
+            stringBuilder.append("  ");
+        }
+
+        if(level > 0) {
+            for (int i = 0; i < 3; i++) {
+                stringBuilder.append("_ ");
+            }
         }
           stringBuilder.append(node.key.toString() +"\n"+ toString(node.left,level+1)+toString(node.right,level+1));
         return stringBuilder.toString();
     }
 
-    private String toStringChild(Node<K> node){
-        if(node.key == null){
-            return "";
-        }
-        return node.key.toString() + " ";
-    }
+
 
 
     private static class Node<K>{
@@ -90,7 +91,8 @@ public class BinarySearchTree<K extends Comparable> {
         stringTree.insert(5);
         stringTree.insert(7);
         stringTree.insert(8);
-        System.out.println(stringTree.size());
+        stringTree.insert(9);
+
 
         System.out.println(stringTree);
     }
