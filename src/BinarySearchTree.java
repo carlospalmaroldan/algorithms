@@ -37,19 +37,29 @@ public class BinarySearchTree<K extends Comparable> {
             return " ";
         }else{
 
-            stringBuilder.append(toString(root));
+            stringBuilder.append(toString(root,0));
         }
         return stringBuilder.toString();
     }
 
-    private String toString(Node<K> node){
+    private String toString(Node<K> node,int level){
 
         if(node.key == null){
-            return " ";
+            return "";
         }
+        StringBuilder stringBuilder = new StringBuilder();
+        for(int i = 0; i<3*level;i++){
+            stringBuilder.append("-");
+        }
+          stringBuilder.append(node.key.toString() +"\n"+ toString(node.left,level+1)+toString(node.right,level+1));
+        return stringBuilder.toString();
+    }
 
-         return node.key.toString() + " \n " +
-             toString(node.left) + toString(node.right);
+    private String toStringChild(Node<K> node){
+        if(node.key == null){
+            return "";
+        }
+        return node.key.toString() + " ";
     }
 
 
@@ -71,15 +81,15 @@ public class BinarySearchTree<K extends Comparable> {
     }
 
     public static void main(String[] args){
-        BinarySearchTree<String> stringTree = new BinarySearchTree<>();
-        stringTree.insert("S");
-        stringTree.insert("E");
-        stringTree.insert("X");
-        stringTree.insert("A");
-        stringTree.insert("R");
-        stringTree.insert("C");
-        stringTree.insert("H");
-        stringTree.insert("M");
+        BinarySearchTree<Integer> stringTree = new BinarySearchTree<>();
+        stringTree.insert(4);
+        stringTree.insert(2);
+        stringTree.insert(6);
+        stringTree.insert(1);
+        stringTree.insert(3);
+        stringTree.insert(5);
+        stringTree.insert(7);
+        stringTree.insert(8);
         System.out.println(stringTree.size());
 
         System.out.println(stringTree);
