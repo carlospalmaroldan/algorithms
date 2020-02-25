@@ -79,6 +79,42 @@ public class BinarySearchTree<K extends Comparable> {
     }
 
 
+    public Node<K> deleteNode(K key){
+      return  deleteNode(root,key);
+    }
+
+    private Node<K> deleteNode(Node<K> present,K key){
+            Node<K> nodeToReturn = new Node<>();
+            if(present == null){
+                return nodeToReturn;
+            }
+            if(present.key == key){
+                if(!present.right.isEmpty()){
+                    nodeToReturn = present;
+                    present = present.right;
+                    return nodeToReturn;
+                }
+                if(present.left != null){
+                    nodeToReturn = present;
+                    present = present.left;
+                    return nodeToReturn;
+                }
+                nodeToReturn = present;
+                present = new Node<>();
+                return nodeToReturn;
+            }
+
+            nodeToReturn = deleteNode(present.left,key);
+            if(!nodeToReturn.isEmpty()){
+                return  nodeToReturn;
+            }
+            nodeToReturn = deleteNode(present.right,key);
+            if(!nodeToReturn.isEmpty()){
+                return  nodeToReturn;
+            }
+            return nodeToReturn;
+    }
+
     private static class Node<K>{
         private Node<K> right;
         private Node<K> left;
@@ -96,7 +132,11 @@ public class BinarySearchTree<K extends Comparable> {
         public Node(){};
 
         public String toString(){
-            return key.toString();
+            if(key != null) {
+                return key.toString();
+            }else{
+                return "";
+            }
         }
     }
 
@@ -113,11 +153,15 @@ public class BinarySearchTree<K extends Comparable> {
         integerTree.insert(9);
 
 
-       /* System.out.println(stringTree);*/
-        List<Node<Integer>> list=integerTree.retrieveInOrder();
+
+        /*List<Node<Integer>> list=integerTree.retrieveInOrder();
         for(int i = 0; i< list.size(); i++){
             System.out.println(list.get(i));
-        }
+        }*/
+
+        Node<Integer> node =integerTree.deleteNode(6);
+/*        System.out.println(integerTree);
+        System.out.println(node);*/
     }
 
 }
