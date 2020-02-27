@@ -1,3 +1,5 @@
+package main.java;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -104,16 +106,30 @@ public class BinarySearchTree<K extends Comparable> {
                 return nodeToReturn;
             }
 
-            nodeToReturn = deleteNode(present.left,key);
-            if(!nodeToReturn.isEmpty()){
-                return  nodeToReturn;
+            if(key.compareTo(present.key)<0) {
+                nodeToReturn = deleteNode(present.left, key);
+                    return  nodeToReturn;
+            }else {
+                nodeToReturn = deleteNode(present.right, key);
+                    return nodeToReturn;
             }
-            nodeToReturn = deleteNode(present.right,key);
-            if(!nodeToReturn.isEmpty()){
-                return  nodeToReturn;
-            }
-            return nodeToReturn;
     }
+
+
+    public Node<K> locateMinimum(){
+        return locateMinimum(root);
+    }
+
+    private Node<K> locateMinimum(Node<K> root){
+        if(root.isEmpty()) return new Node<>();
+        if(!root.left.isEmpty()){
+           return locateMinimum(root.left);
+        }else if(!root.right.isEmpty()){
+           return locateMinimum(root.right);
+        }
+        return root;
+    }
+
 
     private static class Node<K>{
         private Node<K> right;
@@ -151,6 +167,8 @@ public class BinarySearchTree<K extends Comparable> {
         integerTree.insert(7);
         integerTree.insert(8);
         integerTree.insert(9);
+
+        System.out.println(integerTree.locateMinimum());
 
 
 
