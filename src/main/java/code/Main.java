@@ -1,4 +1,4 @@
-package main.java;
+package code;
 
 import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
 import java.time.LocalDate;

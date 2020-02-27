@@ -1,4 +1,4 @@
-package main.java;
+package code;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -131,29 +131,25 @@ public class BinarySearchTree<K extends Comparable> {
     }
 
 
-    private static class Node<K>{
-        private Node<K> right;
-        private Node<K> left;
-        private K key;
-        public Node(K key){
-            this.key = key;
-            this.left = new Node<K>();
-            this.right = new Node<K>();
-        }
+    public static class Node<K>{
+            private Node<K> right;
+            private Node<K> left;
+            private K key;
 
-        public  boolean isEmpty(){
-            return key == null;
-        }
 
-        public Node(){};
-
-        public String toString(){
-            if(key != null) {
-                return key.toString();
-            }else{
-                return "";
+            public  boolean isEmpty(){
+                return key == null;
             }
-        }
+
+            public Node(){};
+
+            public String toString(){
+                if(key != null) {
+                    return key.toString();
+                }else{
+                    return "";
+                }
+            }
     }
 
     public static void main(String[] args){

@@ -1,4 +1,4 @@
-package main.java;
+package code;
 
 import static java.lang.Math.ceil;
 
