@@ -92,8 +92,8 @@ public class BinarySearchTree<K extends Comparable> {
             }
             if(present.key == key){
                 if(!present.right.isEmpty()){
-                    nodeToReturn = present;
-                    present = present.right;
+                    nodeToReturn = locateMinimum(present.right);
+                    nodeToReturn.left = present.left;
                     return nodeToReturn;
                 }
                 if(present.left != null){
@@ -101,17 +101,18 @@ public class BinarySearchTree<K extends Comparable> {
                     present = present.left;
                     return nodeToReturn;
                 }
-                nodeToReturn = present;
-                present = new Node<>();
+                nodeToReturn.right = new Node<>();
+                nodeToReturn.left = new Node<>();
+                nodeToReturn.key = null;
                 return nodeToReturn;
             }
 
             if(key.compareTo(present.key)<0) {
-                nodeToReturn = deleteNode(present.left, key);
-                    return  nodeToReturn;
+                present.left = deleteNode(present.left, key);
+                    return  present;
             }else {
-                nodeToReturn = deleteNode(present.right, key);
-                    return nodeToReturn;
+                present.right = deleteNode(present.right, key);
+                    return present;
             }
     }
 
@@ -120,14 +121,28 @@ public class BinarySearchTree<K extends Comparable> {
         return locateMinimum(root);
     }
 
+    public Node<K> deleteMinimum(){
+        return deleteMinimum(root);
+    }
+
+    private Node<K> deleteMinimum(Node<K> node){
+        if(root.isEmpty()) return new Node<>();
+        if(!node.left.isEmpty()){
+            node.left = deleteMinimum(node.left);
+        }else{
+            return new Node<>();
+        }
+        return node;
+    }
+
     private Node<K> locateMinimum(Node<K> root){
         if(root.isEmpty()) return new Node<>();
         if(!root.left.isEmpty()){
            return locateMinimum(root.left);
-        }else if(!root.right.isEmpty()){
-           return locateMinimum(root.right);
+        }else {
+            return root;
         }
-        return root;
+
     }
 
 
@@ -165,6 +180,7 @@ public class BinarySearchTree<K extends Comparable> {
         integerTree.insert(9);
 
         System.out.println(integerTree.locateMinimum());
+        /*integerTree.deleteMinimum();*/
 
 
 
@@ -174,8 +190,9 @@ public class BinarySearchTree<K extends Comparable> {
         }*/
 
         Node<Integer> node =integerTree.deleteNode(6);
-/*        System.out.println(integerTree);
-        System.out.println(node);*/
+
+        System.out.println(integerTree);
+       /* System.out.println(node);*/
     }
 
 }
