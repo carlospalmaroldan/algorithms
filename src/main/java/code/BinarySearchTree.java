@@ -87,18 +87,17 @@ public class BinarySearchTree<K extends Comparable> {
 
     private Node<K> deleteNode(Node<K> present,K key){
             Node<K> nodeToReturn = new Node<>();
-            if(present == null){
+            if(present.isEmpty()){
                 return nodeToReturn;
             }
             if(present.key == key){
                 if(!present.right.isEmpty()){
                     nodeToReturn = locateMinimum(present.right);
+                    deleteMinimum(present.right);
                     nodeToReturn.left = present.left;
-                    return nodeToReturn;
-                }
-                if(present.left != null){
-                    nodeToReturn = present;
-                    present = present.left;
+                    if(present.right != nodeToReturn){
+                       nodeToReturn.right= present.right;
+                    }
                     return nodeToReturn;
                 }
                 nodeToReturn.right = new Node<>();
