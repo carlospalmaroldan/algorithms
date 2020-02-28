@@ -73,5 +73,185 @@ public class BinarySearchTreeTest {
         assertEquals(integerTree.toString(),expectedTree.toString());
     }
 
+    @Test
+    public void shouldDeleteNodesWithoutChildren(){
+        BinarySearchTree<Integer> integerTree = new BinarySearchTree<>();
+        integerTree.insert(4);
+        integerTree.insert(2);
+        integerTree.insert(3);
+        integerTree.insert(1);
+        BinarySearchTree<Integer> expectedTree = new BinarySearchTree<>();
+        expectedTree.insert(4);
+        expectedTree.insert(2);
+        expectedTree.insert(1);
+
+
+        integerTree.deleteNode(3);
+        assertEquals(expectedTree.toString(),integerTree.toString());
+
+    }
+
+    @Test
+    public void shouldDeleteNodeWithTwoChildren(){
+        BinarySearchTree<Integer> integerTree = new BinarySearchTree<>();
+        integerTree.insert(4);
+        integerTree.insert(2);
+        integerTree.insert(3);
+        integerTree.insert(1);
+        integerTree.insert(8);
+        integerTree.insert(5);
+        integerTree.insert(10);
+        integerTree.insert(9);
+        integerTree.insert(13);
+        integerTree.insert(15);
+
+        BinarySearchTree<Integer> expectedTree = new BinarySearchTree<>();
+        expectedTree.insert(4);
+        expectedTree.insert(2);
+        expectedTree.insert(3);
+        expectedTree.insert(1);
+        expectedTree.insert(8);
+        expectedTree.insert(5);
+        expectedTree.insert(13);
+        expectedTree.insert(9);
+        expectedTree.insert(15);
+
+
+        integerTree.deleteNode(10);
+
+        integerTree.toString();
+        assertEquals(expectedTree.toString(),integerTree.toString());
+
+
+
+    }
+
+    @Test
+    public void shouldReturnRootNodeIfNodeNotInTree(){
+        BinarySearchTree<Integer> integerTree = new BinarySearchTree<>();
+        integerTree.insert(4);
+        integerTree.insert(2);
+        integerTree.insert(3);
+        integerTree.insert(1);
+        integerTree.insert(8);
+        integerTree.insert(5);
+        integerTree.insert(10);
+        integerTree.insert(9);
+        integerTree.insert(13);
+        integerTree.insert(15);
+
+        BinarySearchTree<Integer> expectedTree = new BinarySearchTree();
+        expectedTree.insert(4);
+        expectedTree.insert(2);
+        expectedTree.insert(3);
+        expectedTree.insert(1);
+        expectedTree.insert(8);
+        expectedTree.insert(5);
+        expectedTree.insert(10);
+        expectedTree.insert(9);
+        expectedTree.insert(13);
+        expectedTree.insert(15);
+
+
+        assertEquals("4",integerTree.deleteNode(100).toString());
+        assertEquals(integerTree.toString(),expectedTree.toString());
+    }
+
+    @Test
+    public void shouldDeleteNodeTwoChildrenUpdateBothChildrenTimes(){
+        BinarySearchTree<Integer> integerTree = new BinarySearchTree<>();
+        integerTree.insert(4);
+        integerTree.insert(2);
+        integerTree.insert(3);
+        integerTree.insert(1);
+        integerTree.insert(8);
+        integerTree.insert(5);
+        integerTree.insert(10);
+        integerTree.insert(9);
+        integerTree.insert(13);
+        integerTree.insert(15);
+
+        System.out.println(integerTree.toString());
+
+        integerTree.deleteNode(8);
+
+        System.out.println(integerTree.toString());
+
+        BinarySearchTree<Integer> expectedTree = new BinarySearchTree();
+        expectedTree.insert(4);
+        expectedTree.insert(2);
+        expectedTree.insert(1);
+        expectedTree.insert(3);
+        expectedTree.insert(9);
+        expectedTree.insert(5);
+        expectedTree.insert(10);
+        expectedTree.insert(13);
+        expectedTree.insert(15);
+
+        assertEquals(integerTree.toString(),expectedTree.toString());
+    }
+
+    @Test
+    public void shouldBeEmptyIfAllRemoved(){
+        BinarySearchTree<Integer> integerTree = new BinarySearchTree<>();
+        integerTree.insert(4);
+        integerTree.insert(2);
+        integerTree.insert(3);
+        integerTree.insert(1);
+        integerTree.insert(8);
+        integerTree.insert(5);
+        integerTree.insert(10);
+
+        integerTree.deleteNode(8);
+        integerTree.deleteNode(3);
+        integerTree.deleteNode(5);
+        integerTree.deleteNode(1);
+        integerTree.deleteNode(10);
+        integerTree.deleteNode(2);
+        integerTree.deleteNode(4);
+
+        assertEquals(integerTree.size(),0);
+        assertEquals(integerTree.toString(), " ");
+
+    }
+
+    @Test
+    public void shouldBeAbleToRemoveAndAddAlternatively(){
+        BinarySearchTree<Integer> integerTree = new BinarySearchTree<>();
+        integerTree.insert(4);
+        integerTree.deleteNode(4);
+        integerTree.insert(2);
+        integerTree.insert(1);
+        integerTree.deleteNode(2);
+
+        assertEquals(integerTree.size(),1);
+        assertEquals(integerTree.toString(), "1\n");
+
+    }
+
+    @Test
+    public void shouldReturnLeftTreeWhenDeletingIfNoRighTree(){
+        BinarySearchTree<Integer> integerTree = new BinarySearchTree<>();
+        integerTree.insert(4);
+        integerTree.insert(3);
+        integerTree.insert(2);
+        integerTree.insert(1);
+        integerTree.insert(5);
+        integerTree.insert(6);
+        integerTree.insert(7);
+        integerTree.deleteNode(5);
+        integerTree.deleteNode(7);
+        integerTree.deleteNode(6);
+        integerTree.deleteNode(4);
+
+        BinarySearchTree<Integer> expectedTree = new BinarySearchTree<>();
+        expectedTree.insert(3);
+        expectedTree.insert(2);
+        expectedTree.insert(1);
+
+        assertEquals(expectedTree.toString(),integerTree.toString());
+
+    }
+
 
 }

@@ -82,23 +82,28 @@ public class BinarySearchTree<K extends Comparable> {
 
 
     public Node<K> deleteNode(K key){
-      return  deleteNode(root,key);
+      root =  deleteNode(root,key);
+      return root;
     }
 
     private Node<K> deleteNode(Node<K> present,K key){
             Node<K> nodeToReturn = new Node<>();
-            if(present == null){
+            if(present.isEmpty()){
                 return nodeToReturn;
             }
             if(present.key == key){
+                this.size = size - 1;
                 if(!present.right.isEmpty()){
                     nodeToReturn = locateMinimum(present.right);
+                    deleteMinimum(present.right);
                     nodeToReturn.left = present.left;
+                    if(present.right != nodeToReturn){
+                       nodeToReturn.right= present.right;
+                    }
                     return nodeToReturn;
                 }
-                if(present.left != null){
-                    nodeToReturn = present;
-                    present = present.left;
+                if(!present.left.isEmpty()){
+                    nodeToReturn = present.left;
                     return nodeToReturn;
                 }
                 nodeToReturn.right = new Node<>();
@@ -189,7 +194,7 @@ public class BinarySearchTree<K extends Comparable> {
             System.out.println(list.get(i));
         }*/
 
-        Node<Integer> node =integerTree.deleteNode(6);
+       integerTree.deleteNode(6);
 
         System.out.println(integerTree);
        /* System.out.println(node);*/
