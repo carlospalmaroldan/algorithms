@@ -34,6 +34,35 @@ public class BinarySearchTree<K extends Comparable> {
 
     }
 
+    public Node<K> get(K key){
+
+       return get(root,key);
+    }
+
+    private Node<K> get(Node<K> present,K key){
+        if(present.isEmpty()) return new Node<>();
+        if(present.key == key){
+            return present;
+        }
+        if(key.compareTo(present.key)<0){
+           return get(present.left,key);
+        } else if (key.compareTo(present.key) > 0) {
+            return get(present.right,key);
+        }
+        return new Node<>();
+    }
+
+    private Node<K> nonRecursiveGet(K key){
+        return nonRecursiveGet(root,key);
+    }
+
+    private Node<K> nonRecursiveGet(Node<K> present,K key){
+        while(present.key != key && !present.isEmpty()){
+
+        }
+        return new Node<>();
+    }
+
     public String toString(){
         StringBuilder stringBuilder = new StringBuilder();
         if(root.isEmpty()){

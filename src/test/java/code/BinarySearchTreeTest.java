@@ -253,5 +253,21 @@ public class BinarySearchTreeTest {
 
     }
 
+    @Test
+    public void shouldGetElement(){
+        BinarySearchTree<Integer> integerTree = new BinarySearchTree<>();
+        integerTree.insert(4);
+        integerTree.insert(3);
+        integerTree.insert(2);
+        integerTree.insert(1);
+        integerTree.insert(5);
+        integerTree.insert(6);
+        integerTree.insert(7);
+
+        assertEquals("7",integerTree.get(7).toString());
+        assertEquals(integerTree.size(),7);
+
+    }
+
 
 }
