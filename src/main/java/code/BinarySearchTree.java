@@ -109,6 +109,23 @@ public class BinarySearchTree<K extends Comparable> {
 
     }
 
+    public String nonRecursiveTreeTraversal(){
+        Node<K> present = root;
+        Stack<K> stack = new Stack<>();
+        StringBuilder stringBuilder = new StringBuilder();
+        while(stack.size != 0 || !present.isEmpty()){
+            if(!present.isEmpty()){
+                stack.push(present);
+                present = present.left;
+            }else{
+                Node<K> node = stack.pop();
+                stringBuilder.append(node.key);
+                present = node.right;
+            }
+        }
+        return stringBuilder.toString();
+    }
+
 
     public Node<K> deleteNode(K key){
       root =  deleteNode(root,key);
@@ -199,6 +216,42 @@ public class BinarySearchTree<K extends Comparable> {
                     return "";
                 }
             }
+    }
+
+    private static class Stack<K>{
+        Node<K>[] innerArray;
+        int currentPosition=0;
+        int size = 0;
+        public Stack(Node<K>[] innerArray){
+            this.innerArray = innerArray;
+        }
+        public Stack(){
+            this.innerArray = new Node[1];
+        }
+        public boolean isEmpty(){
+            return innerArray.length == 0;
+        }
+        public void push(Node<K> node){
+            if(currentPosition == innerArray.length-1){
+                Node<K>[] copyArray =new Node[innerArray.length*2];
+                for(int i=0;i<innerArray.length;i++){
+                    copyArray[i] = innerArray[i];
+                }
+                innerArray = copyArray;
+            }
+            innerArray[currentPosition++] = node;
+            size = size +1;
+        }
+        public Node<K> pop(){
+            if(innerArray[currentPosition-1]==null){
+                return null;
+            }
+            Node<K> nodeToReturn = innerArray[--currentPosition];
+            size = size -1;
+            innerArray[currentPosition] = null;
+            return nodeToReturn;
+        }
+
     }
 
     public static void main(String[] args){

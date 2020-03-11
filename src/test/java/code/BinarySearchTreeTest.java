@@ -269,5 +269,21 @@ public class BinarySearchTreeTest {
 
     }
 
+    @Test
+    public void shouldPrintNonRecursively() {
+        BinarySearchTree<Integer> integerTree = new BinarySearchTree<>();
+        integerTree.insert(4);
+        integerTree.insert(2);
+        integerTree.insert(3);
+        integerTree.insert(1);
+        integerTree.insert(8);
+        integerTree.insert(5);
+        integerTree.insert(10);
+        integerTree.insert(9);
+        integerTree.insert(13);
+        integerTree.insert(15);
+        assertEquals("1234589101315",integerTree.nonRecursiveTreeTraversal());
+    }
+
 
 }
