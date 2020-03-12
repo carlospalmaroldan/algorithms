@@ -3,6 +3,8 @@ package code;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.Assert.*;
 public class BinarySearchTreeTest {
@@ -301,6 +303,30 @@ public class BinarySearchTreeTest {
 
         assertEquals("13",integerTree.nonRecursiveGet(13).toString());
         assertEquals("",integerTree.nonRecursiveGet(25).toString());
+    }
+
+    @Test
+    public void shouldReturnNodesWithinRange(){
+        BinarySearchTree<Integer> integerTree = new BinarySearchTree<>();
+        integerTree.insert(4);
+        integerTree.insert(2);
+        integerTree.insert(3);
+        integerTree.insert(1);
+        integerTree.insert(8);
+        integerTree.insert(5);
+        integerTree.insert(10);
+        integerTree.insert(9);
+        integerTree.insert(13);
+        integerTree.insert(15);
+
+        List<BinarySearchTree.Node<Integer>> expected = new ArrayList<>();
+        expected.add(new BinarySearchTree.Node<>(4));
+        expected.add(new BinarySearchTree.Node<>(5));
+        expected.add(new BinarySearchTree.Node<>(8));
+        expected.add(new BinarySearchTree.Node<>(9));
+        expected.add(new BinarySearchTree.Node<>(10));
+        List<BinarySearchTree.Node<Integer>> actual=integerTree.range(4,10);
+        assertEquals(expected.toString(),actual.toString());
     }
 
 

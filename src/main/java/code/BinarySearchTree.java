@@ -203,6 +203,32 @@ public class BinarySearchTree<K extends Comparable> {
 
     }
 
+    public List<Node<K>> range(K lower,K higher){
+        List<Node<K>> list = new ArrayList<>();
+        return range(root,lower,higher,list);
+    }
+
+    private List<Node<K>> range(Node<K> present,K lower,K higher,List<Node<K>> nodeList){
+        if(present.isEmpty()) return nodeList;
+        if(lower.compareTo(present.key)  < 0 && higher.compareTo(present.key)  > 0){
+            range(present.left,lower,higher,nodeList);
+            nodeList.add(present);
+            range(present.right,lower,higher,nodeList);
+
+        }else if(lower.compareTo(present.key) == 0){
+            nodeList.add(present);
+            range(present.right,lower,higher,nodeList);
+        }else if(higher.compareTo(present.key) == 0){
+            range(present.left,lower,higher,nodeList);
+            nodeList.add(present);
+        }else if(lower.compareTo(present.key)<0){
+            range(present.right,lower,higher,nodeList);
+        }else if(higher.compareTo(present.key) > 0){
+            range(present.left,lower,higher,nodeList);
+        }
+
+        return nodeList;
+    }
 
     public static class Node<K>{
             private Node<K> right;
@@ -222,6 +248,10 @@ public class BinarySearchTree<K extends Comparable> {
                 }else{
                     return "";
                 }
+            }
+
+            public Node(K key){
+                this.key = key;
             }
     }
 
