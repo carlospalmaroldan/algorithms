@@ -42,7 +42,6 @@ public class ConnectedComponents {
         int i=point1[0]*N + point1[1];
         int j=point2[0]*N + point2[1];
         return root(i)==root(j);
-
     }
 
     public int root(int i){

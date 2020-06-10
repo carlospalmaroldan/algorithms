@@ -3,6 +3,46 @@
   <component name="issues">
     <option name="index">
       <map>
+        <entry key="/Dummy.txt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/a.dummy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MMS2/wdw-keyring-xbands/src/main/java/com/wdpr/gam/keyring/xbands/claimable/api/validators/BandClaimAttemptValidator.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MMS2/wdw-keyring-xbands/src/main/java/com/wdpr/gam/keyring/xbands/claimable/webservice/LookupClaimableBandWebServiceImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MMS2/wdw-keyring-xbands/src/main/java/com/wdpr/gam/keyring/xbands/repository/database/BandGuestByBandIdentifierRepositoryImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/Chapter5.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/Chapter6.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/Chapter7.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/MaximumSubarray.java">
           <value>
             <set />
