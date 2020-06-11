@@ -1,0 +1,21 @@
+
+Usquid:S1135|"2Complete the task associated to this TODO comment.(ıæ„ñùÿÿÿÿ8ãİÌÂ»-
+U
+squid:S106b"9Replace this use of System.out or System.err by a logger.(¾ËæJ8Íú”à´-
+psquid:S001175"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(âÀœ÷8´ †à´-
+usquid:S00117}"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÛåÒßøÿÿÿÿ8ÒÿÔÀ»-
+1squid:S1220""Move this file to a named package.
+usquid:S00117`"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‹¸Âœûÿÿÿÿ8Íú”à´-
+qsquid:S00117²"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(îïğ8­Ş‰Â»-
+Bsquid:S2119©"Save and re-use this "Random".(šŸ«íøÿÿÿÿ8­‹åÁ»-
+psquid:S00117="QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(˜ûƒĞ8“¢ª€¹-
+usquid:S00117X"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(àäÜäúÿÿÿÿ8†¦Šá´-
+vsquid:S00117¨"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¦ûó¨ûÿÿÿÿ8Æ®æÁ»-
+usquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(šøêëıÿÿÿÿ8øœ„º½-
+V
+squid:S106"9Replace this use of System.out or System.err by a logger.(…ú â8øœ„º½-
+usquid:S00117""QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•™ùÒşÿÿÿÿ8ğ¾êß´-
+usquid:S00117E"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(äé‡Ìşÿÿÿÿ8ìÂˆá´-
+usquid:S00117f"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(˜³Õ‹ıÿÿÿÿ8õ¯ˆ€¹-
+nsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ô¿ üÿÿÿÿ8ƒ¬µ½-
+isquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Š€­ò8Ãşƒº½-

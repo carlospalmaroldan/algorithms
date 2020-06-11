@@ -1,0 +1,60 @@
+
+{squid:S4165«"cRemove this useless assignment; "start" already holds the assigned value along all execution paths.(¥€
+Osquid:S2589°"7Remove this expression which always evaluates to "true"(Ÿ–âÑ
+squid:S1319À"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Íò¾ßûÿÿÿÿ
+‘squid:S1319À"tThe type of the "arrayList" object should be an interface such as "List" rather than the implementation "ArrayList".(Íò¾ßûÿÿÿÿ
+osquid:S3776ğ"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(­ïØüÿÿÿÿ
+jsquid:S00117¬"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼ì¼
+Gsquid:S1656°"/Remove or correct this useless self-assignment.(Ñäå
+jsquid:S3776Í"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(øº±
+Gsquid:S1656«"/Remove or correct this useless self-assignment.(¥€
+bsquid:CommentedOutCodeLine	"<This block of commented-out lines of code should be removed.(ğİıú
+bsquid:CommentedOutCodeLine#"<This block of commented-out lines of code should be removed.(ñèò†
+csquid:CommentedOutCodeLine¡"<This block of commented-out lines of code should be removed.(üÖˆ
+jsquid:S00117Í"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(øº±
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ù×¥³øÿÿÿÿ
+_squid:UnusedPrivateMethodú"4Remove this unused private "polinomialValue" method.(ğŒƒ«üÿÿÿÿ
+gsquid:CommentedOutCodeLineS"<This block of commented-out lines of code should be removed.(ßİ°Éøÿÿÿÿ
+‘squid:S1319Ì"tThe type of the "arrayList" object should be an interface such as "List" rather than the implementation "ArrayList".(²ÎŠşÿÿÿÿ
+‘squid:S1319³"tThe type of the "arrayList" object should be an interface such as "List" rather than the implementation "ArrayList".(öªª±ÿÿÿÿÿ
+Wsquid:UnusedPrivateMethod„"1Remove this unused private "hornerMethod" method.(îÓ ½
+Wsquid:S1854»":Remove this useless assignment to local variable "output".(Ü‘ôúÿÿÿÿ
+squid:S1319Ì"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(²ÎŠşÿÿÿÿ
+bsquid:CommentedOutCodeLine7"<This block of commented-out lines of code should be removed.(ıÆï
+Wsquid:S1854ğ":Remove this useless assignment to local variable "output".(¡‹üàúÿÿÿÿ
+ssquid:UselessImportCheck"ORemove this unused import 'javax.swing.plaf.basic.BasicInternalFrameTitlePane'.(‹£¬¥
+1squid:S1220""Move this file to a named package.
+‘squid:S1319ì"tThe type of the "sequence" object should be an interface such as "List" rather than the implementation "LinkedList".(ë³“üÿÿÿÿ
+bsquid:CommentedOutCodeLinez"<This block of commented-out lines of code should be removed.(ÍÏˆğ
+hsquid:CommentedOutCodeLine˜"<This block of commented-out lines of code should be removed.(“¢°”úÿÿÿÿ
+csquid:CommentedOutCodeLine’"<This block of commented-out lines of code should be removed.(Æ¢úØ
+Š squid:ForLoopCounterChangedCheckâ"XRefactor the code in order to not assign to this loop counter from within the loop body.(ˆæ—õıÿÿÿÿ
+csquid:CommentedOutCodeLineŒ"<This block of commented-out lines of code should be removed.(À‘¹ø
+Œsquid:S1319ì"oThe type of the "set" object should be an interface such as "List" rather than the implementation "LinkedList".(ë³“üÿÿÿÿ
+bsquid:CommentedOutCodeLineu"<This block of commented-out lines of code should be removed.(Ïøÿ
+_$squid:AssignmentInSubExpressionCheck¼".Extract the assignment out of this expression.(·ı–
+jsquid:S3776¸"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(Ú—à
+Ysquid:UselessImportCheck"0Remove this unused import 'java.time.LocalDate'.(›‘¬èıÿÿÿÿ
+gsquid:CommentedOutCodeLineh"<This block of commented-out lines of code should be removed.(…½Ö’üÿÿÿÿ
+gsquid:CommentedOutCodeLinel"<This block of commented-out lines of code should be removed.(‘´ÀÀşÿÿÿÿ
+Š squid:ForLoopCounterChangedCheckê"XRefactor the code in order to not assign to this loop counter from within the loop body.(ˆæ—õıÿÿÿÿ
+Csquid:S1481Ø"+Remove this unused "output" local variable.(æï»à
+csquid:UselessImportCheck"?Remove this unused import 'java.time.format.DateTimeFormatter'.(‰÷÷ª
+dsquid:UnusedPrivateMethod¸">Remove this unused private "determineifTwoElementsSum" method.(ˆæÅ
+Š squid:ForLoopCounterChangedCheckß"XRefactor the code in order to not assign to this loop counter from within the loop body.(ˆæ—õıÿÿÿÿ
+csquid:CommentedOutCodeLine…"<This block of commented-out lines of code should be removed.(ğ™°
+Š squid:ForLoopCounterChangedCheckí"XRefactor the code in order to not assign to this loop counter from within the loop body.(ˆæ—õıÿÿÿÿ
+>squid:S1172¸"&Remove these unused method parameters.(ˆæÅ
+bsquid:CommentedOutCodeLine)"<This block of commented-out lines of code should be removed.(ôÕû
+squid:S1319³"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(öªª±ÿÿÿÿÿ
+Osquid:S2589¼"7Remove this expression which always evaluates to "true"(·ı–
+]squid:UnusedPrivateMethod¹"7Remove this unused private "putLesserThanKLeft" method.(ÕÂÏ‰
+jsquid:S00117¸"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆæÅ
+isquid:S00117Ğ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Èå¼	
+‡squid:S1319Ö"oThe type of the "set" object should be an interface such as "List" rather than the implementation "LinkedList".(ó”û°
+Œsquid:S1319Ö"tThe type of the "sequence" object should be an interface such as "List" rather than the implementation "LinkedList".(ó”û°
+jsquid:S00117­"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢·ú
+osquid:S00117ö"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’Å»¹ÿÿÿÿÿ
+osquid:S00117Ÿ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿ­¼ëÿÿÿÿÿ
+osquid:S00117Ñ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ì©Âÿÿÿÿÿ
+ysquid:S4165°"aRemove this useless assignment; "end" already holds the assigned value along all execution paths.(Ñäå

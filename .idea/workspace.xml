@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7cf45a99-2755-4838-aefc-ce17742d8912" name="Default" comment="merging from master">
       <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jfree_jcommon_1_0_16.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jfree_jfreechart_1_0_13.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_8_1.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/7/0706260b08f0a41646ba216d000dd829fccbf13f" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/3/63313e23fa75f554ecbbed6bd5117080dc227ca7" afterDir="false" />
@@ -11,16 +13,15 @@
       <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/2/924f089edb4af5ee45c8a9d1129cd28e2b368138" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/5/b5b3097196fc3469c5a2dff6dd5237b5634fc8bb" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/code/Sedgewick1517.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/code/WeightedQuickUnion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/code/PlotExample.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarIssues.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarIssues.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithmsanddatastructures.iml" beforeDir="false" afterPath="$PROJECT_DIR$/algorithmsanddatastructures.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/algorithmsanddatastructures/Chapter4.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/algorithmsanddatastructures/Main.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/algorithmsanddatastructures/MaximumSubarray.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/code/ConnectedComponents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/code/ConnectedComponents.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/code/Sedgewick1517.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/code/Sedgewick1517.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,13 +38,6 @@
         <option value="Class" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>minHeap</find>
-      <find>randomizedQuicksortRepeated</find>
-      <find>Node</find>
-    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
@@ -63,12 +57,6 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
-    <option name="y" value="-7" />
-    <option name="width" value="630" />
-    <option name="height" value="1085" />
-  </component>
   <component name="ProjectId" id="1d85V2f1N3AsqSao9cFeeTLgaVv" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -83,9 +71,9 @@
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1588799706415" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.build.tools" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -96,7 +84,27 @@
       <recent name="C:\Users\carlos.palma\algorithmsanddatastructures\src\test" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Sedgewick1517">
+  <component name="RunManager" selected="Application.PlotExample (1)">
+    <configuration name="PlotExample (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="code.PlotExample" />
+      <module name="algorithmsanddatastructures" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="code.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlotExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PlotExample" />
+      <module name="algorithmsanddatastructures" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Sedgewick1517" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="code.Sedgewick1517" />
       <module name="algorithmsanddatastructures" />
@@ -106,38 +114,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ConnectedComponentsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="algorithmsanddatastructures" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="code.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="code" />
-      <option name="MAIN_CLASS_NAME" value="code.ConnectedComponentsTest" />
-      <option name="METHOD_NAME" value="shouldPerformUnion" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ConnectedComponentsTest.shouldDetectConnectionBetweenOnes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="algorithmsanddatastructures" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="code.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="code" />
-      <option name="MAIN_CLASS_NAME" value="code.ConnectedComponentsTest" />
-      <option name="METHOD_NAME" value="shouldDetectConnectionBetweenOnes" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -158,7 +134,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Sedgewick1512Test.shouldFlattenWithPathCompression" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="WeightedQuickUnionTest.shouldJoinSmallerTreeToLargerTree" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="algorithmsanddatastructures" />
       <extension name="coverage">
         <pattern>
@@ -167,27 +143,27 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="code" />
-      <option name="MAIN_CLASS_NAME" value="code.Sedgewick1512Test" />
-      <option name="METHOD_NAME" value="shouldFlattenWithPathCompression" />
+      <option name="MAIN_CLASS_NAME" value="code.WeightedQuickUnionTest" />
+      <option name="METHOD_NAME" value="shouldJoinSmallerTreeToLargerTree" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.ConnectedComponentsTest" />
-      <item itemvalue="JUnit.ConnectedComponentsTest.shouldDetectConnectionBetweenOnes" />
-      <item itemvalue="JUnit.Sedgewick1512Test.shouldFlattenWithPathCompression" />
-      <item itemvalue="JUnit.Sedgewick1512Test.shouldFlattenWithImprovedPathCompression" />
       <item itemvalue="Application.Sedgewick1517" />
+      <item itemvalue="JUnit.Sedgewick1512Test.shouldFlattenWithImprovedPathCompression" />
+      <item itemvalue="JUnit.WeightedQuickUnionTest.shouldJoinSmallerTreeToLargerTree" />
+      <item itemvalue="Application.PlotExample" />
+      <item itemvalue="Application.PlotExample (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.PlotExample (1)" />
+        <item itemvalue="Application.PlotExample" />
         <item itemvalue="Application.Sedgewick1517" />
+        <item itemvalue="JUnit.WeightedQuickUnionTest.shouldJoinSmallerTreeToLargerTree" />
         <item itemvalue="JUnit.Sedgewick1512Test.shouldFlattenWithImprovedPathCompression" />
-        <item itemvalue="JUnit.Sedgewick1512Test.shouldFlattenWithPathCompression" />
-        <item itemvalue="JUnit.ConnectedComponentsTest" />
-        <item itemvalue="JUnit.ConnectedComponentsTest.shouldDetectConnectionBetweenOnes" />
       </list>
     </recent_temporary>
   </component>
@@ -450,7 +426,21 @@
       <option name="project" value="LOCAL" />
       <updated>1591800136120</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="starting exercise 1.5.17 from sedgewick">
+      <created>1591817679710</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1591817679710</updated>
+    </task>
+    <task id="LOCAL-00031" summary="unit test for WeightedQuickUnion">
+      <created>1591905662973</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1591905662973</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -460,8 +450,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="linear maximum subarray" />
-    <MESSAGE value="heapify implementation" />
     <MESSAGE value="build max heap implementation" />
     <MESSAGE value="min heap sort implementation" />
     <MESSAGE value="quicksort implementation" />
@@ -485,61 +473,63 @@
     <MESSAGE value="non recursive get" />
     <MESSAGE value="method to locate all nodes within a certain range" />
     <MESSAGE value="exercise 1.5.12 from sedgewick 4th edition" />
-    <option name="LAST_COMMIT_MESSAGE" value="exercise 1.5.12 from sedgewick 4th edition" />
+    <MESSAGE value="starting exercise 1.5.17 from sedgewick" />
+    <MESSAGE value="unit test for WeightedQuickUnion" />
+    <option name="LAST_COMMIT_MESSAGE" value="unit test for WeightedQuickUnion" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="139" y="0" key="CommitChangelistDialog2" timestamp="1591800133491">
+    <state x="139" y="0" key="CommitChangelistDialog2" timestamp="1591905661582">
       <screen x="0" y="0" width="1097" height="577" />
     </state>
-    <state x="139" y="0" key="CommitChangelistDialog2/0.0.1097.577@0.0.1097.577" timestamp="1591800133491" />
-    <state width="219" height="438" key="DebuggerActiveHint" timestamp="1591799707905">
+    <state x="139" y="0" key="CommitChangelistDialog2/0.0.1097.577@0.0.1097.577" timestamp="1591905661582" />
+    <state width="484" height="438" key="DebuggerActiveHint" timestamp="1591817508392">
       <screen x="0" y="0" width="1097" height="577" />
     </state>
-    <state width="219" height="438" key="DebuggerActiveHint/0.0.1097.577@0.0.1097.577" timestamp="1591799707905" />
+    <state width="484" height="438" key="DebuggerActiveHint/0.0.1097.577@0.0.1097.577" timestamp="1591817508392" />
     <state x="103" y="40" key="DiffContextDialog" timestamp="1591800059791">
       <screen x="0" y="0" width="1097" height="577" />
     </state>
     <state x="103" y="40" key="DiffContextDialog/0.0.1097.577@0.0.1097.577" timestamp="1591800059791" />
-    <state width="1054" height="195" key="GridCell.Tab.0.bottom" timestamp="1591817422292">
+    <state width="1054" height="177" key="GridCell.Tab.0.bottom" timestamp="1591912476759">
       <screen x="0" y="0" width="1097" height="577" />
     </state>
-    <state width="1054" height="195" key="GridCell.Tab.0.bottom/0.0.1097.577@0.0.1097.577" timestamp="1591817422292" />
-    <state width="1054" height="195" key="GridCell.Tab.0.center" timestamp="1591817422292">
+    <state width="1054" height="177" key="GridCell.Tab.0.bottom/0.0.1097.577@0.0.1097.577" timestamp="1591912476759" />
+    <state width="1054" height="177" key="GridCell.Tab.0.center" timestamp="1591912476759">
       <screen x="0" y="0" width="1097" height="577" />
     </state>
-    <state width="1054" height="195" key="GridCell.Tab.0.center/0.0.1097.577@0.0.1097.577" timestamp="1591817422292" />
-    <state width="1054" height="195" key="GridCell.Tab.0.left" timestamp="1591817422292">
+    <state width="1054" height="177" key="GridCell.Tab.0.center/0.0.1097.577@0.0.1097.577" timestamp="1591912476759" />
+    <state width="1054" height="177" key="GridCell.Tab.0.left" timestamp="1591912476759">
       <screen x="0" y="0" width="1097" height="577" />
     </state>
-    <state width="1054" height="195" key="GridCell.Tab.0.left/0.0.1097.577@0.0.1097.577" timestamp="1591817422292" />
-    <state width="1054" height="195" key="GridCell.Tab.0.right" timestamp="1591817422292">
+    <state width="1054" height="177" key="GridCell.Tab.0.left/0.0.1097.577@0.0.1097.577" timestamp="1591912476759" />
+    <state width="1054" height="177" key="GridCell.Tab.0.right" timestamp="1591912476759">
       <screen x="0" y="0" width="1097" height="577" />
     </state>
-    <state width="1054" height="195" key="GridCell.Tab.0.right/0.0.1097.577@0.0.1097.577" timestamp="1591817422292" />
-    <state width="1054" height="3" key="GridCell.Tab.1.bottom" timestamp="1591799757631">
+    <state width="1054" height="177" key="GridCell.Tab.0.right/0.0.1097.577@0.0.1097.577" timestamp="1591912476759" />
+    <state width="1054" height="2" key="GridCell.Tab.1.bottom" timestamp="1591906285713">
       <screen x="0" y="0" width="1097" height="577" />
     </state>
-    <state width="1054" height="3" key="GridCell.Tab.1.bottom/0.0.1097.577@0.0.1097.577" timestamp="1591799757631" />
-    <state width="1054" height="3" key="GridCell.Tab.1.center" timestamp="1591799757631">
+    <state width="1054" height="2" key="GridCell.Tab.1.bottom/0.0.1097.577@0.0.1097.577" timestamp="1591906285713" />
+    <state width="1054" height="2" key="GridCell.Tab.1.center" timestamp="1591906285713">
       <screen x="0" y="0" width="1097" height="577" />
     </state>
-    <state width="1054" height="3" key="GridCell.Tab.1.center/0.0.1097.577@0.0.1097.577" timestamp="1591799757631" />
-    <state width="1054" height="3" key="GridCell.Tab.1.left" timestamp="1591799757630">
+    <state width="1054" height="2" key="GridCell.Tab.1.center/0.0.1097.577@0.0.1097.577" timestamp="1591906285713" />
+    <state width="1054" height="2" key="GridCell.Tab.1.left" timestamp="1591906285713">
       <screen x="0" y="0" width="1097" height="577" />
     </state>
-    <state width="1054" height="3" key="GridCell.Tab.1.left/0.0.1097.577@0.0.1097.577" timestamp="1591799757630" />
-    <state width="1054" height="3" key="GridCell.Tab.1.right" timestamp="1591799757631">
+    <state width="1054" height="2" key="GridCell.Tab.1.left/0.0.1097.577@0.0.1097.577" timestamp="1591906285713" />
+    <state width="1054" height="2" key="GridCell.Tab.1.right" timestamp="1591906285713">
       <screen x="0" y="0" width="1097" height="577" />
     </state>
-    <state width="1054" height="3" key="GridCell.Tab.1.right/0.0.1097.577@0.0.1097.577" timestamp="1591799757631" />
-    <state x="29" y="0" key="SettingsEditor" timestamp="1591795702754">
+    <state width="1054" height="2" key="GridCell.Tab.1.right/0.0.1097.577@0.0.1097.577" timestamp="1591906285713" />
+    <state x="29" y="0" key="SettingsEditor" timestamp="1591912253157">
       <screen x="0" y="0" width="1097" height="577" />
     </state>
-    <state x="29" y="0" key="SettingsEditor/0.0.1097.577@0.0.1097.577" timestamp="1591795702754" />
-    <state x="141" y="22" key="Vcs.Push.Dialog.v2" timestamp="1591800146949">
+    <state x="29" y="0" key="SettingsEditor/0.0.1097.577@0.0.1097.577" timestamp="1591912253157" />
+    <state x="141" y="22" key="Vcs.Push.Dialog.v2" timestamp="1591905671938">
       <screen x="0" y="0" width="1097" height="577" />
     </state>
-    <state x="141" y="22" key="Vcs.Push.Dialog.v2/0.0.1097.577@0.0.1097.577" timestamp="1591800146949" />
+    <state x="141" y="22" key="Vcs.Push.Dialog.v2/0.0.1097.577@0.0.1097.577" timestamp="1591905671938" />
     <state x="211" y="-1" width="672" height="678" key="search.everywhere.popup" timestamp="1591815271020">
       <screen x="0" y="0" width="1097" height="577" />
     </state>
@@ -567,6 +557,21 @@
           <url>file://$PROJECT_DIR$/src/main/java/code/Sedgewick1512.java</url>
           <line>52</line>
           <option name="timeStamp" value="170" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/code/WeightedQuickUnionTest.java</url>
+          <line>12</line>
+          <option name="timeStamp" value="171" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/code/WeightedQuickUnion.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="172" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/code/WeightedQuickUnionTest.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="173" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
