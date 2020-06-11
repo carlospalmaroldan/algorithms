@@ -15,7 +15,7 @@ public class Sedgewick1517 {
     private static int count(WeightedQuickUnion weightedQuickUnion,int  N){
         int numberOfConnections =0;
         Random random = new Random();
-        while(weightedQuickUnion.getCount()!=0) {
+        while(weightedQuickUnion.getCount()>1) {
             int first = random.nextInt(N);
             int second = random.nextInt(N);
 

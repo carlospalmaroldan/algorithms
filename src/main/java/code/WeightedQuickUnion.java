@@ -1,7 +1,7 @@
 package code;
 
 public class WeightedQuickUnion {
-    private int[] id;
+     int[] id;
     private int[] size;
     private int count;
 
@@ -12,7 +12,7 @@ public class WeightedQuickUnion {
             id[i] = i;
             size[i] = 1;
         }
-        count = N-1;
+        count = N;
     }
 
     public int find(int p){
@@ -24,12 +24,12 @@ public class WeightedQuickUnion {
         int pRoot = find(p);
         int qRoot = find(q);
         if(pRoot == qRoot) return;
-        if(size[p]<size[q]){
-            id[pRoot] = qRoot;
-            size[qRoot]++;
-        }else{
+        if(size[pRoot]>size[qRoot]){
             id[qRoot] = pRoot;
             size[pRoot]++;
+        }else{
+            id[pRoot] = qRoot;
+            size[qRoot]++;
         }
         count--;
     }
